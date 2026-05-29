@@ -55,5 +55,10 @@ Codex requires you to explicitly trust new hooks before they will execute.
 
 You can easily tweak colors, animations, and speeds by editing the `$color` and `$animation` variables inside the `switch` block in `boopa-hook.ps1`.
 
+## 👏 Credits & Acknowledgements
+
+A massive thank you to the original [Eilgnaw/boopa](https://github.com/Eilgnaw/boopa) project! 
+This Windows version (`boopaWin`) was entirely inspired by and developed based on the brilliant concept and design of the original macOS `boopa`. Without their pioneering work on screen-edge glow notifications for AI agents, this project would not exist. 
+
 ---
 *Created to bring the beautiful Boopa experience to Windows users.*
