@@ -1,5 +1,7 @@
 # BoopaWin 🌟
 
+*Read this in other languages: [English](README.md), [简体中文](README_zh.md).*
+
 A beautiful, Windows-native screen edge glow notification system for [Codex CLI](https://github.com/codex-team/codex). Inspired by the macOS version of Boopa.
 
 BoopaWin creates stunning visual light effects on the edges of your screen to let you know the exact state of your AI agent without needing to constantly check your terminal.
@@ -50,19 +52,27 @@ Codex requires you to explicitly trust new hooks before they will execute.
 
 - **boopa-hook.ps1**: The smart dispatcher. It intercepts JSON events from Codex via `stdin`, determines the state of the agent, and launches the visual layer with the correct colors and animations.
 - **boopa-notify.ps1**: The visual powerhouse. It generates a transparent, click-through WPF overlay across all your monitors. It uses `System.Windows.Automation` to reliably detect when you interact with your terminal, ensuring notifications only disappear when you're actually looking at them.
-- **boopa-tray.ps1**: The background system tray toggle. Run this script to place a green icon in your Windows Taskbar tray. Right-click the icon to easily enable or disable BoopaWin globally without touching any files.
+- **boopa-tray.ps1**: The background system tray toggle. Places a green icon in your Windows Taskbar tray. Right-click the icon to easily enable or disable BoopaWin globally without touching any files.
+- **install-autostart.ps1**: A helper script that automatically configures `boopa-tray.ps1` to launch silently when you boot into Windows.
 
 ## 🎛️ System Tray Toggle (Optional)
 
-If you want the ability to easily turn BoopaWin on or off:
-1. Run `boopa-tray.ps1` in the background:
-   ```powershell
-   powershell -WindowStyle Hidden -File "C:\Users\YOUR_USERNAME\.codex\boopa-tray.ps1"
-   ```
-2. A small colored dot will appear in your system tray (bottom right).
-   - 🟢 **Green Dot**: BoopaWin is enabled.
-   - 🔘 **Gray Dot**: BoopaWin is disabled (Silent mode).
-3. Right-click the icon to toggle the state or double-click to quick-toggle.
+If you want the ability to easily turn BoopaWin on or off without using commands, you can enable the System Tray icon.
+
+### Make it start automatically on boot (Recommended)
+Simply right-click `install-autostart.ps1` and select **Run with PowerShell** (or run it via the terminal). 
+This will automatically place a shortcut in your Windows Startup folder so the tray icon appears every time you turn on your computer.
+
+### Start it manually
+If you only want to run it occasionally, run this command in your terminal:
+```powershell
+powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Users\YOUR_USERNAME\.codex\boopa-tray.ps1"
+```
+
+Once running, a small colored dot will appear in your system tray (bottom right).
+- 🟢 **Green Dot**: BoopaWin is enabled.
+- 🔘 **Gray Dot**: BoopaWin is disabled (Silent mode).
+Right-click the icon to toggle the state or double-click to quick-toggle.
 
 ## 📝 Customization
 
@@ -72,6 +82,8 @@ You can easily tweak colors, animations, and speeds by editing the `$color` and 
 
 A massive thank you to the original [Eilgnaw/boopa](https://github.com/Eilgnaw/boopa) project! 
 This Windows version (`boopaWin`) was entirely inspired by and developed based on the brilliant concept and design of the original macOS `boopa`. Without their pioneering work on screen-edge glow notifications for AI agents, this project would not exist. 
+
+🔗 **Friends & Links**: [LINUX DO (linux.do)](https://linux.do)
 
 ---
 *Created to bring the beautiful Boopa experience to Windows users.*
