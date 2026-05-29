@@ -50,6 +50,19 @@ Codex requires you to explicitly trust new hooks before they will execute.
 
 - **boopa-hook.ps1**: The smart dispatcher. It intercepts JSON events from Codex via `stdin`, determines the state of the agent, and launches the visual layer with the correct colors and animations.
 - **boopa-notify.ps1**: The visual powerhouse. It generates a transparent, click-through WPF overlay across all your monitors. It uses `System.Windows.Automation` to reliably detect when you interact with your terminal, ensuring notifications only disappear when you're actually looking at them.
+- **boopa-tray.ps1**: The background system tray toggle. Run this script to place a green icon in your Windows Taskbar tray. Right-click the icon to easily enable or disable BoopaWin globally without touching any files.
+
+## 🎛️ System Tray Toggle (Optional)
+
+If you want the ability to easily turn BoopaWin on or off:
+1. Run `boopa-tray.ps1` in the background:
+   ```powershell
+   powershell -WindowStyle Hidden -File "C:\Users\YOUR_USERNAME\.codex\boopa-tray.ps1"
+   ```
+2. A small colored dot will appear in your system tray (bottom right).
+   - 🟢 **Green Dot**: BoopaWin is enabled.
+   - 🔘 **Gray Dot**: BoopaWin is disabled (Silent mode).
+3. Right-click the icon to toggle the state or double-click to quick-toggle.
 
 ## 📝 Customization
 
