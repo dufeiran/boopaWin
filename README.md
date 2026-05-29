@@ -6,9 +6,9 @@ BoopaWin creates stunning visual light effects on the edges of your screen to le
 
 ## ✨ Features
 
-- 🟢 **Working State**: Continuous soft green glow while the agent is processing.
-- 🔵 **Question/Permission State**: Pulsing blue light when the agent is waiting for your approval or input.
-- 🔴 **Finished State**: Breathing red light when the task is fully complete.
+- 🟡 **Working State**: Continuous yellow/gold glow while the agent is processing.
+- 🔴 **Blocked/Question State**: Pulsing red light when the agent is waiting for your approval or input.
+- 🟢 **Finished State**: Breathing green light when the task is fully complete.
 - 👁️ **Smart Auto-Dismiss**: Uses advanced UIAutomation to detect when you refocus your terminal window, instantly and automatically dismissing the notification.
 - 🛡️ **Zero Dependencies**: Pure PowerShell & .NET Reflection implementation. No C# compilation issues, no third-party libraries, works out of the box on Windows.
 
