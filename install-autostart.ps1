@@ -7,7 +7,7 @@ $vbsContent = @"
 Set objShell = CreateObject("Wscript.Shell")
 objShell.Run "powershell -ExecutionPolicy Bypass -WindowStyle Hidden -File ""$scriptPath""", 0, False
 "@
-Set-Content -Path $vbsPath -Value $vbsContent -Encoding UTF8
+Set-Content -Path $vbsPath -Value $vbsContent -Encoding Ascii
 
 Write-Host "Creating BoopaWin auto-start shortcut..."
 $WshShell = New-Object -ComObject WScript.Shell
