@@ -45,28 +45,28 @@ $duration = 5
 
 switch ($event) {
     'UserPromptSubmit' {
-        # Working: green, solid, waits for next state to override it, with a safety timeout.
+        # Working: yellow, solid, waits for next state to override it, with a safety timeout.
         $mode = 'working'
-        $color = '#44FF88'
+        $color = '#FFCC00'
         $animation = 'solid'
         $duration = 120
     }
     'SessionStart' {
         $mode = 'working'
-        $color = '#44FF88'
+        $color = '#FFCC00'
         $animation = 'solid'
         $duration = 120
     }
     'PermissionRequest' {
-        # Waiting for approval: blue, pulse, attention (stays until focused)
+        # Blocked (Waiting for approval): red, pulse, attention
         $mode = 'attention'
-        $color = '#4488FF'
+        $color = '#FF4444'
         $animation = 'pulse'
     }
     'Stop' {
-        # Finished: red, breathe, attention (stays until focused)
+        # Finished: green, breathe, attention
         $mode = 'attention'
-        $color = '#FF4444'
+        $color = '#44FF88'
         $animation = 'breathe'
     }
 }
