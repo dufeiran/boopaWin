@@ -21,21 +21,66 @@ BoopaWin creates stunning visual light effects on the edges of your screen to le
 
 ## ⚙️ Configuration
 
+### Step 1: Enable Hooks in `config.toml`
+
+Open your `~/.codex/config.toml` and add the following section (if it doesn't already exist):
+
+```toml
+[features]
+hooks = true
+```
+
+### Step 2: Configure `hooks.json`
+
 Open your `~/.codex/hooks.json` (create it if it doesn't exist) and add the following hooks to route Codex events to BoopaWin:
 
 ```json
 {
-  "Stop": {
-    "command": ["powershell", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1"]
-  },
-  "SessionStart": {
-    "command": ["powershell", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1"]
-  },
-  "UserPromptSubmit": {
-    "command": ["powershell", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1"]
-  },
-  "PermissionRequest": {
-    "command": ["powershell", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1"]
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File C:\\Users\\YOUR_USERNAME\\.codex\\boopa-hook.ps1",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
   }
 }
 ```
