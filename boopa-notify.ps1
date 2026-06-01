@@ -47,7 +47,8 @@ $global:terminalNames = @(
     'cmd', 'conhost', 'OpenConsole', 'powershell', 'pwsh', 'WindowsTerminal',
     'WindowsTerminalPreview', 'wt', 'mintty', 'bash', 'sh', 'zsh', 'nu',
     'ConEmu64', 'ConEmuC64', 'Hyper', 'Tabby', 'Alacritty', 'wezterm-gui',
-    'codex', 'Code', 'Code - Insiders', 'Cursor', 'Windsurf', 'Trae'
+    'codex', 'Code', 'Code - Insiders', 'Cursor', 'Windsurf', 'Trae',
+    'devenv', 'rider64', 'idea64', 'pycharm64', 'webstorm64', 'goland64', 'clion64'
 )
 
 function Exit-Boopa {
